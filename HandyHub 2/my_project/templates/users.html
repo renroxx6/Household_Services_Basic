@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HandyHub</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        .main-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .main-title h1 {
+            font-size: 2.5rem;
+            color: #007bff;
+        }
+        .main-title h5 {
+            color: #6c757d;
+            font-weight: 300;
+        }
+        .container-wrapper {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            max-width: 900px;
+        }
+        .login-container {
+            width: 100%;
+            max-width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-container h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+        .btn-custom {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-title">
+        <h1>HandyHub</h1>
+        <h5>A central place for all home needs.</h5>
+    </div>
+
+    <div class="container-wrapper">
+        <!-- Admin Login Container -->
+        <div class="login-container">
+            <h3>Admin Login</h3>
+            <a href="/admin_login" class="btn btn-primary btn-custom">Admin Login</a>
+        </div>
+
+        <!-- Professional Login and Signup Container -->
+        <div class="login-container">
+            <h3>Professional</h3>
+            <a href="/professional_login" class="btn btn-primary btn-custom">Login</a>
+            <a href="/professional_signup" class="btn btn-secondary btn-custom">Sign Up</a>
+        </div>
+
+        <!-- Customer Login and Signup Container -->
+        <div class="login-container">
+            <h3>Customer</h3>
+            <a href="/customer_login" class="btn btn-primary btn-custom">Login</a>
+            <a href="/customer_signup" class="btn btn-secondary btn-custom">Sign Up</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

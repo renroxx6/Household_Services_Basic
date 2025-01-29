@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Professional Signup</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f8f9fa;
+        }
+        .signup-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        .signup-form h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        .form-control {
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        .file-upload-btn {
+            background-color: #f8d7da;
+            color: #dc3545;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 5px;
+        }
+        .register-btn {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .login-link {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+            color: #ff4500;
+            text-decoration: none;
+        }
+        .flash-message {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="signup-form">
+    <h2>Service Professional Signup</h2>
+
+
+    <form method="POST" action="{{ url_for('professional_signup') }}" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="email" class="form-label">Email ID (Username):</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter a secure password" required>
+        </div>
+        <div class="form-group">
+            <label for="fullname" class="form-label">Full Name:</label>
+            <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+            <label for="service" class="form-label">Service Name:</label>
+            <select class="form-control" id="service" name="service_id" required>
+                <option value="" disabled selected>Select available services</option>
+                {% for service in services %}
+                    <option value="{{ service.id }}">{{ service.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="experience" class="form-label">Experience (in years):</label>
+            <input type="number" class="form-control" id="experience" name="experience" min="0" placeholder="Enter years of experience" required>
+        </div>
+        <div class="form-group">
+            <label for="document" class="form-label">Attach Documents (single PDF):</label>
+            <input type="file" class="form-control file-upload-btn" id="document" name="document" accept=".pdf" required>
+        </div>
+        <div class="form-group">
+            <label for="address" class="form-label">Address:</label>
+            <textarea class="form-control" id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="pincode" class="form-label">Pin Code:</label>
+            <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Enter your area's pin code" required>
+        </div>
+        <button type="submit" class="btn register-btn">Register</button>
+        <a href="{{ url_for('professional_login') }}" class="login-link">Login here</a>
+    </form>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Signup</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f8f9fa;
+        }
+        .signup-container {
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .signup-container h3 {
+            font-size: 1.5rem;
+            color: #007bff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .btn-custom {
+            width: 100%;
+        }
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+            color: #ff7f50;
+        }
+    </style>
+</head>
+<body>
+
+<div class="signup-container">
+    <h3>Customer Signup</h3>
+    <form method="POST" action="{{ url_for('customer_signup') }}">
+        <div class="form-group">
+            <label for="email">Email ID (Username):</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="fullname">Full Name:</label>
+            <input type="text" class="form-control" id="fullname" name="fullname" required>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea class="form-control" id="address" name="address" rows="3" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="pincode">Pin Code:</label>
+            <input type="text" class="form-control" id="pincode" name="pincode" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-custom">Register</button>
+        <div class="login-link">
+            <a href="{{ url_for('customer_login') }}">Login here</a>
+        </div>
+    </form>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
